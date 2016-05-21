@@ -10,7 +10,7 @@
 
 После выполнения всех задач файл должен быть переименован в следующий формат:
 
-<Date>-<LastName>.php
+\<Date\>-\<LastName\>.php
 
 Например, 20131216-Ivanov.php
 
@@ -20,7 +20,7 @@
 
 # Структура проекта
 
-* PetrosoftCandidate.php - полученный класс
+* PetrosoftCandidate.php - реализованный класс;
 
-* PetrosoftCandidateTest.php - класс unit тестов (написан для удобства проверки)
+* PetrosoftCandidateTest.php - класс тестов (реализован для удобства проверки).
 
