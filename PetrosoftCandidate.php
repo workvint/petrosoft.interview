@@ -113,6 +113,9 @@ class PetrosoftCandidate
         $n = count($matrix);
         
         for ($i = 1; $i < $n; $i++) {
+            /**
+             * simple bubble sort, I know it's slow and merge sort faster
+             */
             $j = $i;
             while ($j && $matrix[$j][$j] < $matrix[$j - 1][$j - 1]) {
                 $tmp = $matrix[$j - 1][$j - 1];           
@@ -147,20 +150,18 @@ class PetrosoftCandidate
     public function task4($matrix) 
     {
         $result = array();
-        $n = 0;
         
-        foreach ($matrix as $i => $row) {
-            if (empty($row)) {
-                continue;
-            }
-            
-            if (empty($n)) {
-                $n = count($row) - 1;
-            }
-            
-            $keys = $i % 2 ? range($n, 0) : range(0, $n);
-            foreach ($keys as $j) {
-                $result[] = $row[$j];
+        if ($matrix) {
+            $n = count($matrix[0]) - 1;
+       
+            foreach ($matrix as $i => $row) {
+                if ($row) {
+                    $keys = $i % 2 ? range($n, 0) : range(0, $n);
+                    foreach ($keys as $j) {
+                        $result[] = $row[$j];
+                    }
+                }
+
             }
         }
         

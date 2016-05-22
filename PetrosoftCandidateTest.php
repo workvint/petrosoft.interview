@@ -105,6 +105,9 @@ class PetrosoftCandidateTest extends PHPUnit_Framework_TestCase
         $result = $p->task4(array());
         $this->assertEquals($result, array());
         
+        $result = $p->task4(array());
+        $this->assertEquals($result, array());
+        
         $result = $p->task4(array(
             array(),
             array(),
