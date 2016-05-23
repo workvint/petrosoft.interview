@@ -41,13 +41,16 @@ class PetrosoftCandidate
      */
     public function task1($list) 
     {
-        $result = $list;
+        $result = array();
         
         if (!empty($list)) {
             $average = array_sum($list) / count($list);
-            $result = array_filter($list, function ($value) use ($average) {
-                return $value < $average ? false : true;
-            });
+            
+            foreach ($list as $item) {
+                if ($item >= $average) {
+                    $result[] = $item;
+                }
+            }
         }
         
         return $result;

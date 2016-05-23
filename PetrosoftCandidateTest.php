@@ -14,16 +14,16 @@ class PetrosoftCandidateTest extends PHPUnit_Framework_TestCase
         $p = new PetrosoftCandidate();
         
         $result = $p->task1(array());
-        $this->assertEquals(array_values($result), array_values(array()));
+        $this->assertEquals($result, array());
         
         $result = $p->task1(array(6, 2, 7, 1, 3, 4, 5));
-        $this->assertEquals(array_values($result), array_values(array(6, 7, 4, 5)));
+        $this->assertEquals($result, array(6, 7, 4, 5));
         
         $result = $p->task1(array(6, 2, 1, 3.3, 4, 5));
-        $this->assertEquals(array_values($result), array_values(array(6, 4, 5)));
+        $this->assertEquals($result, array(6, 4, 5));
         
         $result = $p->task1(array(6, 2, 1, 3.8, 4, 5));
-        $this->assertEquals(array_values($result), array_values(array(6, 3.8, 4, 5)));
+        $this->assertEquals($result, array(6, 3.8, 4, 5));
     }
     
     public function testTask2()
